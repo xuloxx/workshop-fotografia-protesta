@@ -167,6 +167,46 @@ section.frame{padding-block:clamp(2.5rem,6vw,4rem);border-top:1.5px solid var(--
 .map figcaption a{color:inherit}
 @media (max-width:860px){.venue{grid-template-columns:minmax(0,1fr)}}
 
+/* Streaming */
+.stream{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:center}
+.stream-info p{margin:0 0 1rem;max-width:46ch}
+.stream-facts{list-style:none;margin:1.25rem 0 0;padding:0;display:grid;gap:.5rem}
+.stream-facts li{display:grid;grid-template-columns:1.6rem minmax(0,1fr);gap:.5rem;align-items:baseline}
+.stream-facts li::before{content:"▸";font-family:var(--mono);color:var(--ink)}
+.stream-note{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.vf{position:relative;aspect-ratio:16/9;max-width:100%;background:var(--film);color:var(--film-ink);font-family:var(--mono);overflow:hidden}
+.vf-corner{position:absolute;width:1.6rem;height:1.6rem;border:2px solid var(--film-ink)}
+.vf-corner.tl{top:.9rem;left:.9rem;border-right:0;border-bottom:0}
+.vf-corner.tr{top:.9rem;right:.9rem;border-left:0;border-bottom:0}
+.vf-corner.bl{bottom:.9rem;left:.9rem;border-right:0;border-top:0}
+.vf-corner.br{bottom:.9rem;right:.9rem;border-left:0;border-top:0}
+.vf-rec{position:absolute;top:1.4rem;left:2.9rem;display:flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;letter-spacing:.14em}
+.vf-dot{width:.7rem;height:.7rem;border-radius:50%;background:#e5322b;box-shadow:0 0 0 0 rgba(229,50,43,.6)}
+.vf-tc{position:absolute;top:1.4rem;right:2.9rem;font-size:.78rem;letter-spacing:.1em;font-variant-numeric:tabular-nums}
+.vf-center{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.vf-center strong{display:block;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(2.2rem,6vw,3.6rem);line-height:.9;letter-spacing:.01em}
+.vf-center span{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem;opacity:.8}
+.vf-cross{position:absolute;left:50%;top:50%;width:2.4rem;height:2.4rem;transform:translate(-50%,-50%);opacity:.18;pointer-events:none}
+.vf-cross::before,.vf-cross::after{content:"";position:absolute;background:var(--film-ink)}
+.vf-cross::before{left:50%;top:0;bottom:0;width:1px}
+.vf-cross::after{top:50%;left:0;right:0;height:1px}
+.vf-bars{position:absolute;bottom:1.4rem;left:2.9rem;display:flex;align-items:flex-end;gap:3px;height:1rem}
+.vf-bars i{display:block;width:4px;height:30%;background:var(--film-ink)}
+.vf-meta{position:absolute;bottom:1.35rem;right:2.9rem;font-size:.7rem;letter-spacing:.12em;opacity:.85}
+.vf-scan{position:absolute;left:0;right:0;height:30%;top:-30%;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.05),transparent);pointer-events:none}
+@media (prefers-reduced-motion:no-preference){
+  .vf-dot{animation:rec 1.2s ease-in-out infinite}
+  @keyframes rec{0%{opacity:1;box-shadow:0 0 0 0 rgba(229,50,43,.6)}60%{opacity:.35;box-shadow:0 0 0 .55rem rgba(229,50,43,0)}100%{opacity:1;box-shadow:0 0 0 0 rgba(229,50,43,0)}}
+  .vf-bars i{animation:lvl .9s ease-in-out infinite alternate}
+  .vf-bars i:nth-child(2){animation-delay:-.2s}.vf-bars i:nth-child(3){animation-delay:-.5s}.vf-bars i:nth-child(4){animation-delay:-.1s}.vf-bars i:nth-child(5){animation-delay:-.7s}.vf-bars i:nth-child(6){animation-delay:-.35s}
+  @keyframes lvl{0%{height:20%}50%{height:90%}100%{height:45%}}
+  .vf-scan{animation:scan 4.5s linear infinite}
+  @keyframes scan{to{top:100%}}
+  .vf-corner{animation:focus 3s ease-in-out infinite}
+  @keyframes focus{0%,100%{transform:none}50%{transform:scale(.88)}}
+}
+@media (max-width:860px){.stream{grid-template-columns:minmax(0,1fr)}}
+
 footer{border-top:1.5px solid var(--ink);padding-block:2rem 3rem;font-size:.9rem;color:var(--ink-2)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between}
 
@@ -327,6 +367,34 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
     </div>
   </section>
 
+  <section class="frame" id="streaming">
+    <div class="wrap">
+      <div class="frame-head"><h2>También por streaming</h2><span class="frame-no">Cuadro 08 · Transmisión</span></div>
+      <div class="stream">
+        <div class="stream-info">
+          <p>Si no puedes venir a la sala, sigue el workshop en vivo desde donde estés. La transmisión es gratuita y abierta a todo público.</p>
+          <p>La grabación quedará disponible después en plataformas de libre acceso, para verla cuando quieras.</p>
+          <ul class="stream-facts">
+            <li>En vivo el sábado 14 de noviembre</li>
+            <li>Sin inscripción ni registro previo</li>
+            <li>Grabación completa disponible después</li>
+          </ul>
+          <p class="stream-note" style="margin-top:1.25rem">Plataforma y enlace por anunciar</p>
+        </div>
+        <div class="vf" aria-hidden="true">
+          <div class="vf-scan"></div>
+          <span class="vf-corner tl"></span><span class="vf-corner tr"></span><span class="vf-corner bl"></span><span class="vf-corner br"></span>
+          <div class="vf-rec"><span class="vf-dot"></span>REC · EN VIVO</div>
+          <div class="vf-tc" id="vf-tc">00:00:00:00</div>
+          <div class="vf-cross"></div>
+          <div class="vf-center"><div><strong>En vivo</strong><span>14·11·2026 · Abierto a todo público</span></div></div>
+          <div class="vf-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="vf-meta">1080P · 25FPS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -393,6 +461,17 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 
   go(0);
   setPlaying(playing);
+})();
+
+(function(){
+  const tc = document.getElementById('vf-tc');
+  if (!tc || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const t0 = performance.now();
+  const p = n => String(n).padStart(2, '0');
+  setInterval(() => {
+    const ms = performance.now() - t0, s = Math.floor(ms / 1000);
+    tc.textContent = p(Math.floor(s / 3600)) + ':' + p(Math.floor(s / 60) % 60) + ':' + p(s % 60) + ':' + p(Math.floor((ms % 1000) / 40));
+  }, 40);
 })();
 
 </script>
