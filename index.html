@@ -137,6 +137,14 @@ section.frame{padding-block:clamp(2.5rem,6vw,4rem);border-top:1.5px solid var(--
 /* Exponentes */
 .speakers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
 @media (max-width:1000px){.speakers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.day{align-self:flex-start;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;background:var(--hi);color:var(--hi-ink);padding:.2rem .5rem}
+.guest{margin-top:2rem;display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.25rem 1.75rem;align-items:start;border:1.5px solid var(--ink);background:var(--paper-2);padding:clamp(1rem,3vw,1.6rem)}
+.guest-mark{width:5.5rem;height:5.5rem;display:grid;place-items:center;background:var(--film);color:var(--film-ink);font-family:var(--display);font-weight:900;font-size:1.9rem;letter-spacing:.02em}
+.guest-body{display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.guest-body .role{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:0}
+.guest-body h3{font-family:var(--display);font-weight:800;font-size:1.9rem;text-transform:uppercase;line-height:1;margin:0}
+.guest-body p{margin:0;max-width:70ch}
+@media (max-width:560px){.guest{grid-template-columns:minmax(0,1fr)}}
 .speaker{display:flex;flex-direction:column;gap:.9rem;min-width:0}
 .print{aspect-ratio:4/5;max-width:100%;background:var(--film);position:relative;display:grid;place-items:center;overflow:hidden;border:10px solid var(--paper-2);box-shadow:0 0 0 1px var(--rule)}
 .print .initials{font-family:var(--display);font-weight:900;font-size:clamp(4rem,10vw,6.5rem);color:var(--paper-2);letter-spacing:-.02em;line-height:1}
@@ -331,6 +339,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
         </article>
         <article class="speaker">
           <div class="print"><div class="grain"></div><span class="initials">HG</span><span class="edge">▸ 07</span></div>
+          <span class="day">Sábado 14</span>
           <h3>Héctor González de Cunco</h3>
           <p class="role">Cunco, La Araucanía · más de seis décadas de oficio</p>
           <p>Héctor González de Cunco es un fotógrafo chileno originario de Cunco, Región de La Araucanía, con más de seis décadas de trayectoria. Ha trabajado en prensa, fotografía editorial, retrato y publicidad, desarrollando paralelamente una extensa obra de autor centrada en la vida cotidiana, la memoria, el territorio y la identidad.</p>
@@ -338,6 +347,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
         </article>
         <article class="speaker">
           <div class="print"><div class="grain"></div><span class="initials">NK</span><span class="edge">▸ 08</span></div>
+          <span class="day">Sábado 14</span>
           <h3>Nicole Kramm</h3>
           <p class="role">Fotoperiodismo y documental</p>
           <p>Fotoperiodista, realizadora audiovisual y defensora de derechos humanos. Ha documentado conflictos socioambientales y movimientos sociales en Chile y América Latina. Recibió el premio Rodrigo Rojas de Negri y en 2025 publicó el fotolibro «Terricidio».</p>
@@ -351,6 +361,16 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
           <div class="links"><a href="https://www.instagram.com/edgardgarridoc/" target="_blank" rel="noopener">@edgardgarridoc</a><a href="https://www.facebook.com/EdgardGarridoC/" target="_blank" rel="noopener">Facebook</a></div>
         </article>
       </div>
+      <article class="guest">
+        <div class="guest-mark" aria-hidden="true">ODC</div>
+        <div class="guest-body">
+          <span class="day">Sábado 14</span>
+          <p class="role">Participa también</p>
+          <h3>Observatorio del Derecho a la Comunicación</h3>
+          <p>Organización sin fines de lucro que promueve y defiende la libertad de expresión y el pluralismo, con especial atención a la protección de periodistas, comunicadoras y comunicadores, y fotógrafas y fotógrafos. Documenta restricciones a la prensa y entrega asesoría legal a quienes son detenidos o agredidos mientras informan.</p>
+          <div class="links"><a href="https://observatorioderechocomunicacion.cl/" target="_blank" rel="noopener">observatorioderechocomunicacion.cl</a><a href="https://twitter.com/odcchile" target="_blank" rel="noopener">@odcchile</a></div>
+        </div>
+      </article>
     </div>
   </section>
 
