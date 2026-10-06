@@ -130,7 +130,8 @@ section.frame{padding-block:clamp(2.5rem,6vw,4rem);border-top:1.5px solid var(--
 .tag{align-self:flex-start;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;background:var(--marker);color:var(--paper-2);padding:.2rem .5rem}
 
 /* Exponentes */
-.speakers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.speakers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
+@media (max-width:1000px){.speakers{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .speaker{display:flex;flex-direction:column;gap:.9rem;min-width:0}
 .print{aspect-ratio:4/5;max-width:100%;background:var(--film);position:relative;display:grid;place-items:center;overflow:hidden;border:10px solid var(--paper-2);box-shadow:0 0 0 1px var(--rule)}
 .print .initials{font-family:var(--display);font-weight:900;font-size:clamp(4rem,10vw,6.5rem);color:var(--paper-2);letter-spacing:-.02em;line-height:1}
@@ -328,11 +329,17 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
           <p>Héctor González de Cunco es un fotógrafo chileno originario de Cunco, Región de La Araucanía, con más de seis décadas de trayectoria. Ha trabajado en prensa, fotografía editorial, retrato y publicidad, desarrollando paralelamente una extensa obra de autor centrada en la vida cotidiana, la memoria, el territorio y la identidad. Su fotografía entiende la imagen como un lenguaje capaz de construir relatos y conectar con la experiencia humana.</p>
           <div class="links"><a href="https://www.instagram.com/hectordecunco/" target="_blank" rel="noopener">@hectordecunco</a></div>
         </article>
-        <article class="speaker tbd">
-          <div class="print"><span class="initials">+</span></div>
-          <h3>Por anunciar</h3>
-          <p class="role">Más exponentes en camino</p>
-          <p>Estamos confirmando nuevos invitados. Los publicaremos aquí.</p>
+        <article class="speaker">
+          <div class="print"><div class="grain"></div><span class="initials">NK</span><span class="edge">▸ 08</span></div>
+          <h3>Nicole Kramm</h3>
+          <p class="role">Fotoperiodismo y documental</p>
+          <p>Fotoperiodista, realizadora audiovisual y defensora de derechos humanos. Ha documentado conflictos socioambientales y movimientos sociales en Chile y América Latina. Recibió el premio Rodrigo Rojas de Negri y en 2025 publicó el fotolibro «Terricidio».</p>
+        </article>
+        <article class="speaker">
+          <div class="print"><div class="grain"></div><span class="initials">EG</span><span class="edge">▸ 08A</span></div>
+          <h3>Edgar Garrido</h3>
+          <p class="role">Fotoperiodista · Premio Pulitzer 2019</p>
+          <p>Fotoperiodista chileno nacido en Puerto Montt. Como parte del equipo de Reuters, ganó el Premio Pulitzer de Fotografía de Noticias por la cobertura de la caravana migrante hacia Estados Unidos. Es el primer chileno en recibir este premio.</p>
         </article>
       </div>
     </div>
