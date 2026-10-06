@@ -71,6 +71,7 @@ a{color:var(--ink);text-decoration-color:var(--hi);text-decoration-thickness:3px
 .reel-view{position:relative;aspect-ratio:21/9;max-height:76vh;width:100%;overflow:hidden;background:#000}
 .slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .9s ease}
 .slide.is-active{opacity:1}
+.slide.fit img{object-fit:contain!important;background:#000}
 .slide img{width:100%;height:100%;object-fit:cover;object-position:50% 46%;display:block}
 .reel-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem;padding:.65rem clamp(16px,4vw,40px);font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
 .reel-count{font-weight:600;font-variant-numeric:tabular-nums;flex:none}
@@ -237,17 +238,23 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 <section class="reel" id="reel" aria-roledescription="carrusel" aria-label="Fotografías de protestas">
   <div class="reel-view" tabindex="0">
     <figure class="slide is-active"><img src="img/mirada.jpg" style="object-position:50% 48%" alt="Primer plano de los ojos enrojecidos de una persona con el rostro cubierto por una capucha negra."></figure>
+    <figure class="slide fit"><img src="img/DSF0837.jpg" alt="Retrato con flash sobre fondo negro de una joven con un cartel: El planeta está en crisis y la solución está en tu plato." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF2589.jpg" style="object-position:50% 45%" alt="Militares de espaldas frente a un grupo de manifestantes, con el cerro Santa Lucía al fondo." loading="lazy"></figure>
+    <figure class="slide fit"><img src="img/DSF0946.jpg" alt="Retrato con flash de una persona con sombrero y lentes oscuros tras un cartel: El agua es un derecho." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF2627.jpg" style="object-position:50% 35%" alt="Una joven apoya la mano en el pecho de un carabinero de fuerzas especiales y le habla de frente." loading="lazy"></figure>
+    <figure class="slide fit"><img src="img/DSF0922.jpg" alt="Retrato con flash de una joven con un cartel de cartón: Ya po', despavila." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF2953.jpg" style="object-position:50% 45%" alt="Brigadistas de salud atienden a una persona herida en el rostro, sentada contra una reja." loading="lazy"></figure>
+    <figure class="slide fit"><img src="img/DSF0838.jpg" alt="Retrato con flash de un hombre con capucha gris y mascarilla verde con la palabra SOS." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF3293.jpg" style="object-position:50% 45%" alt="Una persona con máscara y traje rojo encaramada en un farol encendido, con una bandera chilena, bajo el cielo azul de la noche." loading="lazy"></figure>
+    <figure class="slide fit"><img src="img/DSF0971.jpg" alt="Retrato con flash de una mujer mayor con sombrero y un cartel: Cuidemos nuestra casa." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF3745.jpg" style="object-position:50% 40%" alt="Una mujer con cintas de colores en el pelo llora y grita en medio de la multitud." loading="lazy"></figure>
+    <figure class="slide fit"><img src="img/DSF1007.jpg" alt="Retrato con flash de una mujer con un cartel de cartón: Actúa ahora, la crisis climática está aquí." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF4487.jpg" style="object-position:50% 55%" alt="Ciclista detenido en medio de una nube blanca de gas lacrimógeno." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF4654.jpg" style="object-position:50% 45%" alt="Manifestantes con antiparras y pañuelos se agachan entre el humo frente a un muro rayado." loading="lazy"></figure>
     <div class="reel-dots" id="reel-dots"></div>
   </div>
   <div class="reel-bar">
-    <span class="reel-count" id="reel-count" aria-live="polite">▸ 01 / 08</span>
+    <span class="reel-count" id="reel-count" aria-live="polite">▸ 01 / 14</span>
     <div class="reel-ctrl" style="margin-left:auto">
       <button type="button" id="reel-prev" aria-label="Foto anterior">←</button>
       <button type="button" id="reel-play" aria-label="Pausar carrusel">❚❚</button>
