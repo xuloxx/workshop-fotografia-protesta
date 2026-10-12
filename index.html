@@ -74,6 +74,7 @@ a{color:var(--ink);text-decoration-color:var(--hi);text-decoration-thickness:3px
 .slide.fit img{object-fit:contain!important;background:#000}
 .slide img{width:100%;height:100%;object-fit:cover;object-position:50% 46%;display:block}
 .reel-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem;padding:.65rem clamp(16px,4vw,40px);font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
+.reel-credit{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85;min-width:0}
 .reel-count{font-weight:600;font-variant-numeric:tabular-nums;flex:none}
 .reel-cap{flex:1 1 16rem;min-width:0;color:color-mix(in srgb,var(--film-ink) 75%,#fff)}
 .reel-cap a{color:inherit;text-decoration-color:var(--film-ink)}
@@ -251,19 +252,23 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 <section class="reel" id="reel" aria-roledescription="carrusel" aria-label="Fotografías de protestas">
   <div class="reel-view" tabindex="0">
     <figure class="slide is-active"><img src="img/DSF3745.jpg" style="object-position:50% 40%" alt="Una mujer mapuche con cintas de colores en el pelo llora y grita en medio de la multitud."></figure>
+    <figure class="slide" data-credit="Foto: Edgard Garrido"><img src="img/garrido-1.jpg" style="object-position:50% 45%" alt="Foto de Edgard Garrido: un joven con boina roja del Che y paÃ±uelo de calavera levanta una pistola junto a parlantes sobre un auto, en medio de una manifestaciÃ³n." loading="lazy"></figure>
     <figure class="slide"><img src="img/mirada.jpg" style="object-position:50% 48%" alt="Primer plano de los ojos enrojecidos de una persona con el rostro cubierto por una capucha negra." loading="lazy"></figure>
     <figure class="slide fit"><img src="img/DSF0837.jpg" alt="Retrato con flash sobre fondo negro de una joven con un cartel: El planeta está en crisis y la solución está en tu plato." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF2589.jpg" style="object-position:50% 45%" alt="Militares de espaldas frente a un grupo de manifestantes, con el cerro Santa Lucía al fondo." loading="lazy"></figure>
+    <figure class="slide" data-credit="Foto: Edgard Garrido"><img src="img/garrido-2.jpg" style="object-position:50% 45%" alt="Foto de Edgard Garrido: un hombre herido en la cabeza yace sobre el pavimento con manchas de sangre, rodeado de personas que lo asisten." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF2627.jpg" style="object-position:50% 35%" alt="Una joven apoya la mano en el pecho de un carabinero de fuerzas especiales y le habla de frente." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF2953.jpg" style="object-position:50% 45%" alt="Brigadistas de salud atienden a una persona herida en el rostro, sentada contra una reja." loading="lazy"></figure>
     <figure class="slide fit"><img src="img/DSF0946.jpg" alt="Retrato con flash de una persona con sombrero y lentes oscuros tras un cartel: El agua es un derecho." loading="lazy"></figure>
+    <figure class="slide" data-credit="Foto: Edgard Garrido"><img src="img/garrido-3.jpg" style="object-position:50% 45%" alt="Foto de Edgard Garrido: policÃ­as antidisturbios con escudos PNH disparan gases lacrimÃ³genos." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF3293.jpg" style="object-position:50% 45%" alt="Una persona con máscara y traje rojo encaramada en un farol encendido, con una bandera chilena, bajo el cielo azul de la noche." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF4487.jpg" style="object-position:50% 55%" alt="Ciclista detenido en medio de una nube blanca de gas lacrimógeno." loading="lazy"></figure>
     <figure class="slide"><img src="img/DSF4654.jpg" style="object-position:50% 45%" alt="Manifestantes con antiparras y pañuelos se agachan entre el humo frente a un muro rayado." loading="lazy"></figure>
     <div class="reel-dots" id="reel-dots"></div>
   </div>
   <div class="reel-bar">
-    <span class="reel-count" id="reel-count" aria-live="polite">▸ 01 / 10</span>
+    <span class="reel-count" id="reel-count" aria-live="polite">▸ 01 / 13</span>
+    <span class="reel-credit" id="reel-credit"></span>
     <div class="reel-ctrl" style="margin-left:auto">
       <button type="button" id="reel-prev" aria-label="Foto anterior">←</button>
       <button type="button" id="reel-play" aria-label="Pausar carrusel">❚❚</button>
@@ -336,7 +341,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
       <div class="frame-head"><h2>Exponentes</h2><span class="frame-no">Cuadro 06 · Confirmados</span></div>
       <div class="speakers">
         <article class="speaker">
-          <div class="print"><div class="grain"></div><span class="initials">EG</span><span class="edge">▸ 06</span></div>
+          <div class="print"><img src="img/edgard-garrido.jpg" alt="Retrato en blanco y negro de Edgard Garrido, apoyado en una pared blanca con las manos en los bolsillos." style="object-position:30% 30%"><span class="edge">▸ 06</span></div>
           <span class="day">Miércoles 11</span>
           <h3>Edgard Garrido</h3>
           <p class="role">Fotoperiodista · Premio Pulitzer 2019</p>
@@ -453,6 +458,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
   const slides = [...reel.querySelectorAll('.slide')];
   const dotsEl = document.getElementById('reel-dots');
   const countEl = document.getElementById('reel-count');
+  const creditEl = document.getElementById('reel-credit');
   const playBtn = document.getElementById('reel-play');
   const total = slides.length;
   const pad = n => String(n).padStart(2, '0');
@@ -476,6 +482,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
     });
     dots.forEach((d, k) => d.setAttribute('aria-current', k === i ? 'true' : 'false'));
     countEl.textContent = '▸ ' + pad(i + 1) + ' / ' + pad(total);
+    creditEl.textContent = slides[i].dataset.credit || '';
     const next = slides[(i + 1) % total].querySelector('img');
     if (next.loading === 'lazy') next.loading = 'eager';
   }
