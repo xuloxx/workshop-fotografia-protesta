@@ -88,6 +88,11 @@ a{color:var(--ink);text-decoration-color:var(--hi);text-decoration-thickness:3px
 @media (prefers-reduced-motion:reduce){.slide{transition:none}}
 @media (max-width:640px){.reel-view{aspect-ratio:4/3}}
 
+.cobrand{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.1rem}
+.cb-bf{height:clamp(1.8rem,3.6vw,2.6rem);width:auto;filter:var(--logo-filter);display:block}
+.cb-x{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1;color:var(--ink-2)}
+.cb-usach{height:clamp(3.4rem,6.5vw,4.6rem);width:auto;background:#fff;padding:.35rem .6rem;display:block}
+.cb-line{margin-top:.8rem;max-width:60ch}
 .brand{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem}
 .brand img{height:clamp(1.6rem,3.2vw,2.2rem);width:auto;filter:var(--logo-filter);display:block}
 .foot-logo{height:1.4rem;width:auto;filter:var(--logo-filter);display:block}
@@ -253,7 +258,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 <body>
 
 <div class="strip" aria-hidden="true"><div class="strip-inner">
-  <span>▸ 1A</span><span>ISO 400 · B/N</span><span>▸ 2</span><span>25·11·2026</span><span>▸ 2A</span><span>SANTIAGO</span><span>▸ 3</span><span>ENTRADA LIBERADA</span><span>▸ 3A</span><span>ISO 400 · B/N</span><span>▸ 4</span><span>28·11·2026</span><span>▸ 4A</span><span>SANTIAGO</span>
+  <span>▸ 1A</span><span>ISO 400 · B/N</span><span>▸ 2</span><span>25·11·2026</span><span>▸ 2A</span><span>USACH · SANTIAGO</span><span>▸ 3</span><span>ENTRADA LIBERADA</span><span>▸ 3A</span><span>ISO 400 · B/N</span><span>▸ 4</span><span>28·11·2026</span><span>▸ 4A</span><span>USACH · SANTIAGO</span>
 </div></div>
 
 <section class="reel" id="reel" aria-roledescription="carrusel" aria-label="Fotografías de protestas">
@@ -285,7 +290,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 </section>
 
 <header class="wrap hero">
-  <div class="brand"><img src="img/backfocus-logo.png" alt="BackFocus" width="1611" height="251"><span class="eyebrow">presenta · Workshop gratuito · abierto a la comunidad</span></div>
+  <div class="cobrand">
+    <img class="cb-bf" src="img/backfocus-logo.png" alt="BackFocus" width="1611" height="251">
+    <span class="cb-x" aria-hidden="true">×</span>
+    <img class="cb-usach" src="img/usach-dca-logo.png" alt="USACH, Departamento de las Culturas y las Artes" width="776" height="259">
+  </div>
+  <div class="eyebrow cb-line">BackFocus y el Departamento de las Culturas y las Artes de la USACH presentan · Workshop gratuito · abierto a la comunidad</div>
   <h1>Fotografía de <span class="circled">protestas<svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M30 70 C 20 25, 180 8, 300 14 C 390 20, 398 70, 360 98 C 300 128, 90 122, 38 96 C 12 82, 18 55, 60 40"/></svg></span> y marchas</h1>
   <div class="hero-grid">
     <div>
@@ -294,7 +304,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
         <a class="btn" href="#temario">Ver temario</a>
         <a class="btn ghost" href="#exponentes">Ver exponentes</a>
       </div>
-      <div class="collab"><span>En colaboración con</span><img src="img/usach-dca-logo.png" alt="USACH, Departamento de las Culturas y las Artes" width="776" height="259"></div>
     </div>
     <dl class="facts">
       <div><dt>Fechas</dt><dd>Dos jornadas<small>Miércoles 25 de noviembre, de 18:00 a 20:30 h<br>Sábado 28 de noviembre, de 10:00 a 14:00 h</small></dd></div>
