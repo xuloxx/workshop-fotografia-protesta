@@ -87,6 +87,7 @@ a{color:var(--ink);text-decoration-color:var(--hi);text-decoration-thickness:3px
 .reel-dots button[aria-current="true"]{background:var(--film-ink)}
 @media (prefers-reduced-motion:reduce){.slide{transition:none}}
 @media (max-width:640px){.reel-view{aspect-ratio:4/3}}
+@media (min-width:641px){.reel-view{aspect-ratio:3/2;max-height:84vh}.slide img{object-fit:contain!important;object-position:50% 50%!important}}
 
 .cobrand{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.1rem}
 .cb-bf{height:clamp(1.8rem,3.6vw,2.6rem);width:auto;filter:var(--logo-filter);display:block}
