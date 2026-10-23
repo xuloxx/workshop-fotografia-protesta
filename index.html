@@ -61,6 +61,10 @@ a{color:var(--ink);text-decoration-color:var(--hi);text-decoration-thickness:3px
 .wrap{max-width:1080px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
 
 /* Película: borde con perforaciones */
+.strip-inner{justify-content:space-between}
+#strip-meta{min-width:0;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:640px){.strip-fixed{display:none}}
+
 .strip{background:var(--film);color:var(--film-ink);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;overflow:hidden;white-space:nowrap}
 .strip-inner{display:flex;gap:2.2rem;padding-block:.35rem;padding-inline:16px;position:relative}
 .strip::before,.strip::after{content:"";display:block;height:7px;background:repeating-linear-gradient(90deg,transparent 0 10px,var(--paper) 10px 20px,transparent 20px 30px);opacity:.9}
@@ -259,9 +263,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 </head>
 <body>
 
-<div class="strip" aria-hidden="true"><div class="strip-inner">
-  <span>▸ 1A</span><span>ISO 400 · B/N</span><span>▸ 2</span><span>25·11·2026</span><span>▸ 2A</span><span>USACH · SANTIAGO</span><span>▸ 3</span><span>ENTRADA LIBERADA</span><span>▸ 3A</span><span>ISO 400 · B/N</span><span>▸ 4</span><span>28·11·2026</span><span>▸ 4A</span><span>USACH · SANTIAGO</span>
-</div></div>
+<div class="strip" aria-hidden="true"><div class="strip-inner"><span id="strip-meta">▸ 01/10</span><span class="strip-fixed">25·11 + 28·11·2026 · USACH · Entrada liberada</span></div></div>
 
 <section class="reel" id="reel" aria-roledescription="carrusel" aria-label="Fotografías de protestas">
   <div class="reel-view" tabindex="0">
@@ -470,6 +472,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
   const dotsEl = document.getElementById('reel-dots');
   const countEl = document.getElementById('reel-count');
   const creditEl = document.getElementById('reel-credit');
+  const stripMeta = document.getElementById('strip-meta');
   const playBtn = document.getElementById('reel-play');
   const total = slides.length;
   const pad = n => String(n).padStart(2, '0');
@@ -494,6 +497,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
     dots.forEach((d, k) => d.setAttribute('aria-current', k === i ? 'true' : 'false'));
     countEl.textContent = '▸ ' + pad(i + 1) + ' / ' + pad(total);
     creditEl.textContent = slides[i].dataset.credit || '';
+    const meta = slides[i].dataset.meta;
+    const who = (slides[i].dataset.credit || '').replace(/^Foto:\s*/, '');
+    if (stripMeta) stripMeta.textContent = '▸ ' + pad(i + 1) + '/' + pad(total) + ' · ' + (meta ? meta + ' · ' : '') + who;
     const next = slides[(i + 1) % total].querySelector('img');
     if (next.loading === 'lazy') next.loading = 'eager';
   }
