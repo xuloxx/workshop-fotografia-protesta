@@ -189,6 +189,7 @@ section.frame{padding-block:clamp(2.5rem,6vw,4rem);border-top:1.5px solid var(--
 .candidates strong{display:block;font-size:1rem}
 .candidates span{display:block;color:var(--ink-2);font-size:.88rem}
 .candidates a{font-size:.85rem;font-weight:600}
+.map .plano{width:100%;height:auto;display:block}
 .map{margin:0;position:relative;border:1.5px solid var(--ink);background:var(--paper-2)}
 .map-canvas{position:relative;aspect-ratio:1282/670;max-width:100%;overflow:hidden}
 .map-canvas img{width:100%;height:100%;display:block;filter:var(--map-filter)}
@@ -426,11 +427,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
           <div class="partner"><img src="img/usach-dca-logo-negro.png" alt="USACH, Departamento de las Culturas y las Artes" width="782" height="259"></div>
         </div>
         <figure class="map">
-          <div class="map-canvas" style="aspect-ratio:1280/666">
-            <img src="img/mapa-usach.jpg" alt="Mapa del campus de la Universidad de Santiago de Chile y sus alrededores en Estación Central, con la sede marcada." loading="lazy">
-            <span class="pin" style="left:50%;top:50%"><b>USACH</b><i></i></span>
-          </div>
-          <figcaption><span>Campus USACH · Estación Central</span><span>© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">colaboradores de OpenStreetMap</a></span></figcaption>
+          <img class="plano" src="img/plano-usach.webp" alt="Plano de acceso a la USACH: el Departamento de las Culturas y las Artes, marcado con una estrella, está junto a la calle Víctor Jara, a pocos pasos de la salida del metro Universidad de Santiago. También se ven el Planetario, la Casa Central, el Parque Quinta Normal y los metros Estación Central y Quinta Normal." width="1240" height="1269" loading="lazy">
+          <figcaption><span>Plano de acceso · Departamento de las Culturas y las Artes, USACH</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Universidad+de+Santiago+de+Chile+Alameda+3363" target="_blank" rel="noopener">Abrir en Google Maps</a></figcaption>
         </figure>
       </div>
     </div>
