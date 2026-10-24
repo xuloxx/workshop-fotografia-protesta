@@ -208,32 +208,36 @@ section.frame{padding-block:clamp(2.5rem,6vw,4rem);border-top:1.5px solid var(--
 .stream-facts li{display:grid;grid-template-columns:1.6rem minmax(0,1fr);gap:.5rem;align-items:baseline}
 .stream-facts li::before{content:"▸";font-family:var(--mono);color:var(--ink)}
 .stream-note{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
-.vf{position:relative;max-width:100%;background:#ecebe6;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");color:#111;font-family:var(--mono);border:1px solid #111;overflow:hidden}
-.vf-film{height:30px;background:#111;position:relative}
-.vf-film::after{content:"";position:absolute;left:10px;right:10px;top:9px;height:12px;background:repeating-linear-gradient(90deg,#ecebe6 0 16px,transparent 16px 40px);border-radius:2px}
-.vf-body{padding:1.1rem 1.3rem 1.3rem;display:flex;flex-direction:column;gap:.85rem}
-.vf-head{display:flex;align-items:center;gap:.8rem;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-.vf-head i{flex:1;height:2px;background:#111}
-.vf-title{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(3.2rem,8vw,5rem);line-height:.85;letter-spacing:-.01em}
-.vf-band{align-self:flex-start;background:#f5c400;color:#111;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(1.2rem,2.6vw,1.6rem);line-height:1;padding:.35rem .6rem}
-.vf-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-top:1px solid #111;border-bottom:1px solid #111;padding:.6rem 0}
-.vf-rec{display:flex;align-items:center;gap:.55rem;font-size:.8rem;font-weight:600;letter-spacing:.12em}
-.vf-dot{width:.75rem;height:.75rem;border-radius:50%;background:#111;box-shadow:0 0 0 2px #f5c400}
-#vf-tc{font-variant-numeric:tabular-nums;letter-spacing:.08em}
-.vf-bars{display:flex;align-items:flex-end;gap:3px;height:1.1rem}
-.vf-bars i{display:block;width:5px;height:30%;background:#111}
-.vf-ref{border:2px solid #111;padding:.7rem .85rem;background:rgba(236,235,230,.6)}
-.vf-ref b{display:block;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.15rem;line-height:1;padding-bottom:.45rem;margin-bottom:.5rem;border-bottom:2px solid #111}
-.vf-ref ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
-.vf-ref li{display:grid;grid-template-columns:1.6rem minmax(0,1fr);align-items:center;gap:.5rem;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
-.vf-ref .n{width:1.4rem;height:1.4rem;border-radius:50%;background:#111;color:#ecebe6;display:grid;place-items:center;font-size:.72rem;font-weight:700}
-.vf-ref .star{font-size:1.35rem;line-height:1;color:#f5c400;-webkit-text-stroke:1px #111;text-align:center}
+.vf{position:relative;aspect-ratio:16/9;max-width:100%;background:#ecebe6;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");color:#111;font-family:var(--mono);overflow:hidden;border:1px solid #111}
+.vf-corner{position:absolute;width:1.6rem;height:1.6rem;border:3px solid #111}
+.vf-corner.tl{top:.9rem;left:.9rem;border-right:0;border-bottom:0}
+.vf-corner.tr{top:.9rem;right:.9rem;border-left:0;border-bottom:0}
+.vf-corner.bl{bottom:.9rem;left:.9rem;border-right:0;border-top:0}
+.vf-corner.br{bottom:.9rem;right:.9rem;border-left:0;border-top:0}
+.vf-rec{position:absolute;top:1.4rem;left:2.9rem;display:flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;letter-spacing:.14em}
+.vf-dot{width:.7rem;height:.7rem;border-radius:50%;background:#111;box-shadow:0 0 0 2px #f5c400}
+.vf-tc{position:absolute;top:1.4rem;right:2.9rem;font-size:.78rem;letter-spacing:.1em;font-variant-numeric:tabular-nums}
+.vf-center{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.vf-center strong{display:inline-block;background:#f5c400;padding:.08em .22em;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(2.2rem,6vw,3.6rem);line-height:.9;letter-spacing:.01em}
+.vf-center span{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.5rem;opacity:.8}
+.vf-cross{position:absolute;left:50%;top:50%;width:2.4rem;height:2.4rem;transform:translate(-50%,-50%);opacity:.25;pointer-events:none}
+.vf-cross::before,.vf-cross::after{content:"";position:absolute;background:#111}
+.vf-cross::before{left:50%;top:0;bottom:0;width:1px}
+.vf-cross::after{top:50%;left:0;right:0;height:1px}
+.vf-bars{position:absolute;bottom:1.4rem;left:2.9rem;display:flex;align-items:flex-end;gap:3px;height:1rem}
+.vf-bars i{display:block;width:4px;height:30%;background:#111}
+.vf-meta{position:absolute;bottom:1.35rem;right:2.9rem;font-size:.7rem;letter-spacing:.12em;opacity:.85}
+.vf-scan{position:absolute;left:0;right:0;height:30%;top:-30%;background:linear-gradient(to bottom,transparent,rgba(17,17,17,.06),transparent);pointer-events:none}
 @media (prefers-reduced-motion:no-preference){
   .vf-dot{animation:rec 1.2s ease-in-out infinite}
   @keyframes rec{50%{opacity:.25}}
   .vf-bars i{animation:lvl .9s ease-in-out infinite alternate}
-  .vf-bars i:nth-child(2){animation-delay:-.2s}.vf-bars i:nth-child(3){animation-delay:-.5s}.vf-bars i:nth-child(4){animation-delay:-.1s}.vf-bars i:nth-child(5){animation-delay:-.7s}.vf-bars i:nth-child(6){animation-delay:-.35s}.vf-bars i:nth-child(7){animation-delay:-.6s}.vf-bars i:nth-child(8){animation-delay:-.15s}
-  @keyframes lvl{0%{height:20%}50%{height:95%}100%{height:45%}}
+  .vf-bars i:nth-child(2){animation-delay:-.2s}.vf-bars i:nth-child(3){animation-delay:-.5s}.vf-bars i:nth-child(4){animation-delay:-.1s}.vf-bars i:nth-child(5){animation-delay:-.7s}.vf-bars i:nth-child(6){animation-delay:-.35s}
+  @keyframes lvl{0%{height:20%}50%{height:90%}100%{height:45%}}
+  .vf-scan{animation:scan 4.5s linear infinite}
+  @keyframes scan{to{top:100%}}
+  .vf-corner{animation:focus 3s ease-in-out infinite}
+  @keyframes focus{0%,100%{transform:none}50%{transform:scale(.88)}}
 }
 @media (max-width:860px){.stream{grid-template-columns:minmax(0,1fr)}}
 
@@ -437,25 +441,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
           <p class="stream-note" style="margin-top:1.25rem">Plataforma y enlace por anunciar</p>
         </div>
         <div class="vf" aria-hidden="true">
-          <div class="vf-film"></div>
-          <div class="vf-body">
-            <div class="vf-head"><span>USACH / Transmisión</span><i></i></div>
-            <div class="vf-title">En vivo</div>
-            <div class="vf-band">Abierto a todo público</div>
-            <div class="vf-row">
-              <div class="vf-rec"><span class="vf-dot"></span>REC <span id="vf-tc">00:00:00:00</span></div>
-              <div class="vf-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            </div>
-            <div class="vf-ref">
-              <b>Referencias</b>
-              <ul>
-                <li><span class="n">1</span>Miércoles 25 nov · 18:00 – 20:30</li>
-                <li><span class="n">2</span>Sábado 28 nov · 10:00 – 14:00</li>
-                <li><span class="star">★</span>Plataforma por anunciar</li>
-              </ul>
-            </div>
-          </div>
-          <div class="vf-film"></div>
+          <div class="vf-scan"></div>
+          <span class="vf-corner tl"></span><span class="vf-corner tr"></span><span class="vf-corner bl"></span><span class="vf-corner br"></span>
+          <div class="vf-rec"><span class="vf-dot"></span>REC · EN VIVO</div>
+          <div class="vf-tc" id="vf-tc">00:00:00:00</div>
+          <div class="vf-cross"></div>
+          <div class="vf-center"><div><strong>En vivo</strong><span>25 y 28·11·2026 · Abierto a todo público</span></div></div>
+          <div class="vf-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="vf-meta">1080P · 25FPS</div>
         </div>
       </div>
     </div>
