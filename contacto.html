@@ -92,6 +92,34 @@
       </div>
     </div>
   </section>
+  <section class="frame" id="escribenos">
+    <div class="wrap">
+      <div class="frame-head"><h2>Escríbenos</h2><span class="frame-no">Cuadro 03 · Formulario</span></div>
+      <div class="contact">
+        <div class="prose">
+          <p>¿Tienes una consulta sobre el workshop, quieres colaborar o eres de un medio de prensa? Escríbenos y te responderemos a la brevedad.</p>
+          <p class="stream-note">Al enviar se abrirá tu aplicación de correo con el mensaje listo.</p>
+        </div>
+        <form id="form-contacto" class="cform" novalidate>
+          <label>Nombre<input name="nombre" type="text" autocomplete="name" required></label>
+          <label>Correo electrónico<input name="correo" type="email" autocomplete="email" required></label>
+          <label>Motivo
+            <select name="motivo">
+              <option>Consulta sobre el workshop</option>
+              <option>Inscripciones</option>
+              <option>Prensa</option>
+              <option>Quiero colaborar</option>
+              <option>Otro</option>
+            </select>
+          </label>
+          <label>Mensaje<textarea name="mensaje" rows="6" required></textarea></label>
+          <p class="cform-error" id="cform-error" role="alert" hidden></p>
+          <button class="btn" type="submit">Enviar mensaje</button>
+          <p class="cform-alt" id="cform-alt"></p>
+        </form>
+      </div>
+    </div>
+  </section>
 </main>
 
 <section class="band" aria-label="Inscripciones">
@@ -111,5 +139,28 @@
     <span style="flex-basis:100%">Actividad gratuita, voluntaria y sin fines de lucro</span>
   </div>
 </footer>
+<script>
+(function(){
+  // El correo se arma aquí para que no quede escrito tal cual en la página
+  const to = ['domingofk', 'gmail.com'].join('@');
+  const form = document.getElementById('form-contacto');
+  const err = document.getElementById('cform-error');
+  document.getElementById('cform-alt').innerHTML = '¿No se abrió tu correo? Escribe directo a <a href="mailto:' + to + '">' + to + '</a>.';
+  form.addEventListener('input', () => { err.hidden = true; });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const f = form.elements;
+    const nombre = f.nombre.value.trim(), correo = f.correo.value.trim(), mensaje = f.mensaje.value.trim();
+    let msg = '';
+    if (!nombre) msg = 'Escribe tu nombre.';
+    else if (!correo || !f.correo.checkValidity()) msg = 'Escribe un correo electrónico válido.';
+    else if (!mensaje) msg = 'Escribe tu mensaje.';
+    if (msg) { err.textContent = msg; err.hidden = false; return; }
+    const subject = 'Encuentro Fotográfico · ' + f.motivo.value + ' · ' + nombre;
+    const body = mensaje + '\n\n— ' + nombre + ' (' + correo + ')';
+    location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
 </body>
 </html>
