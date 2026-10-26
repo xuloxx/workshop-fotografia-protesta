@@ -33,7 +33,6 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-body > :not(.reel):not(main),main > :not(#lugar),#lugar .frame-head,#lugar .venue-info,#lugar figcaption,.reel-bar,.reel-dots{filter:grayscale(1)}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.6}
 a{color:var(--ink);text-decoration-color:var(--hi);text-decoration-thickness:3px;text-underline-offset:.2em}
 :focus-visible{outline:3px solid var(--ink);outline-offset:2px}
