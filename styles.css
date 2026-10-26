@@ -351,9 +351,28 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
   .site-nav.open .nav-panel li:nth-child(1) a{transition-delay:.28s}
   .site-nav.open .nav-panel li:nth-child(2) a{transition-delay:.36s}
   .site-nav.open .nav-panel li:nth-child(3) a{transition-delay:.44s}
+  .site-nav.open .nav-panel li:nth-child(4) a{transition-delay:.52s}
   .site-nav.open .panel-meta{opacity:1;transition:opacity .5s .55s}
   body.menu-open{overflow:hidden}
 }
 @media (max-width:700px) and (prefers-reduced-motion:reduce){
   .nav-panel,.site-nav.open .nav-panel,.nav-toggle span,.panel-logo,.site-nav .nav-panel a,.panel-meta{transition:none!important}
 }
+
+/* Difusión */
+.caption-box{display:grid;gap:1rem;max-width:760px}
+.caption-box textarea{font:inherit;font-size:.95rem;line-height:1.5;color:var(--ink);background:var(--paper-2);border:1.5px solid var(--ink);padding:.9rem 1rem;width:100%;resize:vertical;border-radius:0}
+.copy-msg{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--ink-2);align-self:center}
+.gallery{display:grid;gap:1.25rem}
+.g-afiche{grid-template-columns:repeat(auto-fill,minmax(14rem,1fr))}
+.g-feed{grid-template-columns:repeat(auto-fill,minmax(12rem,1fr))}
+.g-story{grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr))}
+.piece-card{margin:0;display:flex;flex-direction:column;gap:.55rem;min-width:0}
+.piece-thumb{display:block;border:1px solid var(--rule);background:var(--paper-2);padding:6px;transition:transform .25s,box-shadow .25s}
+.piece-thumb:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.piece-thumb img{width:100%;height:auto;display:block}
+.piece-card strong{display:block;font-family:var(--display);font-weight:800;font-size:1.15rem;text-transform:uppercase;line-height:1}
+.piece-card span{display:block;font-size:.82rem;color:var(--ink-2)}
+.piece-dl{align-self:flex-start;padding:.45rem .8rem;font-size:.85rem}
+.zip-row{margin:1.75rem 0 0}
+@media (max-width:560px){.g-afiche,.g-feed,.g-story{grid-template-columns:repeat(2,minmax(0,1fr))}}
