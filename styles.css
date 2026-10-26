@@ -12,7 +12,7 @@
   --cobalt-ink:#111111;
   --marker:#111111;
   --film:#111111;
-  --film-ink:#f5c400;
+  --film-ink:#f4f4f1;
   --ok:#111111;
   --logo-filter:none;
   --map-filter:none;
@@ -23,23 +23,16 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#0f0f0f; --paper-2:#1a1a1a; --ink:#f4f4f1; --ink-2:#a6a6a2; --rule:#2e2e2e;
   --hi:#f5c400; --hi-ink:#111111;
-  --cobalt:#f5c400; --cobalt-ink:#111111; --marker:#f5c400; --film:#000000; --film-ink:#f5c400; --ok:#f5c400; --logo-filter:invert(1); --map-filter:invert(.92) hue-rotate(180deg) brightness(.95) contrast(.9);
+  --cobalt:#f5c400; --cobalt-ink:#111111; --marker:#a6a6a2; --film:#000000; --film-ink:#f4f4f1; --ok:#f4f4f1; --logo-filter:invert(1); --map-filter:invert(.92) hue-rotate(180deg) brightness(.95) contrast(.9);
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
   --paper:#0f0f0f; --paper-2:#1a1a1a; --ink:#f4f4f1; --ink-2:#a6a6a2; --rule:#2e2e2e;
   --hi:#f5c400; --hi-ink:#111111;
-  --cobalt:#f5c400; --cobalt-ink:#111111; --marker:#f5c400; --film:#000000; --film-ink:#f5c400; --ok:#f5c400; --logo-filter:invert(1); --map-filter:invert(.92) hue-rotate(180deg) brightness(.95) contrast(.9);
+  --cobalt:#f5c400; --cobalt-ink:#111111; --marker:#a6a6a2; --film:#000000; --film-ink:#f4f4f1; --ok:#f4f4f1; --logo-filter:invert(1); --map-filter:invert(.92) hue-rotate(180deg) brightness(.95) contrast(.9);
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-/* Versión en blanco y negro: todo en grises salvo las fotos del carrusel, la estrella del plano y las piezas de difusión.
-   La barra de navegación no lleva filtro propio (rompería el menú móvil fijo); se filtran sus partes. */
-body > :not(.reel):not(main):not(.site-nav),main > :not(#lugar):not(#afiches):not(#feeds):not(#historias),#lugar .frame-head,#lugar .venue-info,#lugar figcaption,.reel-bar,.reel-dots,
-.site-nav .nav-logo,
-#afiches .frame-head,#feeds .frame-head,#historias .frame-head,.piece-card figcaption,.piece-dl,.zip-row{filter:grayscale(1)}
-/* En escritorio los enlaces van en grises; en móvil el menú hamburguesa conserva sus colores */
-@media (min-width:701px){.site-nav ul{filter:grayscale(1)}}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.6}
 a{color:var(--ink);text-decoration-color:var(--hi);text-decoration-thickness:3px;text-underline-offset:.2em}
 :focus-visible{outline:3px solid var(--ink);outline-offset:2px}
@@ -388,3 +381,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 .piece-dl{align-self:flex-start;padding:.45rem .8rem;font-size:.85rem}
 .zip-row{margin:1.75rem 0 0}
 @media (max-width:560px){.g-afiche,.g-feed,.g-story{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Intermedio: blanco y negro con acentos en amarillo.
+   El amarillo queda solo en: "protestas" del título, botones principales, página actual del menú,
+   punto del logo, estrella del plano, "En vivo" del streaming y menú móvil. */
+a{text-decoration-color:#9a9a96}
+.lede strong{background:linear-gradient(transparent 62%,color-mix(in srgb,var(--ink) 14%,transparent) 62%)}
+.day,.pill{background:var(--ink);color:var(--paper)}
+.module.focus{background:var(--film);color:#f4f4f1;border-color:var(--film)}
+.module.focus .tag{background:var(--hi);color:var(--hi-ink)}
+.signup-card .tag{background:#f4f4f1;color:#111}
+.guest-logo{filter:grayscale(1)}
