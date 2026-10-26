@@ -33,6 +33,11 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+/* Versión en blanco y negro: todo en grises salvo las fotos del carrusel, la estrella del plano y las piezas de difusión.
+   La barra de navegación no lleva filtro propio (rompería el menú móvil fijo); se filtran sus partes. */
+body > :not(.reel):not(main):not(.site-nav),main > :not(#lugar):not(#afiches):not(#feeds):not(#historias),#lugar .frame-head,#lugar .venue-info,#lugar figcaption,.reel-bar,.reel-dots,
+.site-nav .nav-logo,.site-nav ul,.panel-logo,.panel-title,.panel-meta,
+#afiches .frame-head,#feeds .frame-head,#historias .frame-head,.piece-card figcaption,.piece-dl,.zip-row{filter:grayscale(1)}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.6}
 a{color:var(--ink);text-decoration-color:var(--hi);text-decoration-thickness:3px;text-underline-offset:.2em}
 :focus-visible{outline:3px solid var(--ink);outline-offset:2px}
