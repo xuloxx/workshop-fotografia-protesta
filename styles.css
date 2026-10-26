@@ -292,7 +292,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 @media (max-width:1000px){.team{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .team figure{margin:0;display:flex;flex-direction:column;gap:.5rem}
-.team img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;filter:grayscale(1);border:6px solid var(--paper-2);box-shadow:0 0 0 1px var(--rule)}
+.team img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;filter:grayscale(1);border:6px solid var(--paper-2);box-shadow:0 0 0 1px var(--rule)}
 .team strong{font-family:var(--display);font-weight:800;font-size:1.25rem;text-transform:uppercase;line-height:1;display:block}
 .team span{font-size:.85rem;color:var(--ink-2);display:block}
 .band{background:var(--film);color:#f4f4f1;padding-block:clamp(2rem,5vw,3rem)}
