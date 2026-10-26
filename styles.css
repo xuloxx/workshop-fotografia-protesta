@@ -342,8 +342,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
   .site-nav.open .nav-panel{transform:none;visibility:visible;transition:transform .55s cubic-bezier(.2,.8,.2,1),visibility 0s}
   .panel-logo{display:block;height:2.6rem;width:auto;align-self:flex-start;opacity:0;transform:translateX(40px);transition:opacity .3s,transform .3s}
   .panel-title{display:flex;flex-direction:column;gap:.45rem;border-bottom:1px solid #3a3a3a;padding-bottom:1.4rem;opacity:0;transform:translateX(40px);transition:opacity .25s,transform .25s}
-  .panel-title span{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:#c9c9c9}
-  .panel-title strong{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(2.1rem,10vw,2.9rem);line-height:.88}
+  .panel-title span{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#c9c9c9}
+  .panel-title strong{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(1.5rem,7vw,2rem);line-height:.9}
   .panel-title mark{background:var(--hi);color:#111;padding:0 .08em}
   .site-nav.open .panel-title{opacity:1;transform:none;transition:opacity .5s .24s,transform .5s .24s cubic-bezier(.2,.8,.2,1)}
   .site-nav .nav-panel ul{flex-direction:column;gap:.2rem}
