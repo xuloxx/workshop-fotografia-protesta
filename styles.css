@@ -1,5 +1,6 @@
 /* Layout: una hoja de contactos — cada sección es un "cuadro" del rollo, con marcas de borde de película y datos de exposición como metadatos. */
 :root{
+  color-scheme:light;
   /* Paleta limitada: blancos, negro y amarillo */
   --paper:#f4f4f1;
   --paper-2:#ffffff;
@@ -20,7 +21,7 @@
   --body:"Public Sans", "Segoe UI", system-ui, sans-serif;
   --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+@media (prefers-color-scheme: dark){:root[data-theme="auto"]{
   --paper:#0f0f0f; --paper-2:#1a1a1a; --ink:#f4f4f1; --ink-2:#a6a6a2; --rule:#2e2e2e;
   --hi:#f5c400; --hi-ink:#111111;
   --cobalt:#f5c400; --cobalt-ink:#111111; --marker:#a6a6a2; --film:#000000; --film-ink:#f4f4f1; --ok:#f4f4f1; --logo-filter:invert(1); --map-filter:invert(.92) hue-rotate(180deg) brightness(.95) contrast(.9);
@@ -394,5 +395,5 @@ a{text-decoration-color:#9a9a96}
 .guest-logo{filter:grayscale(1)}
 
 /* Modo oscuro: logo blanco en vez de invertir (el punto amarillo se volvía azul) */
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) img[src$="encuentro-logo-negro.png"]{content:url(img/encuentro-logo-blanco.png);filter:none}}
+@media (prefers-color-scheme: dark){:root[data-theme="auto"] img[src$="encuentro-logo-negro.png"]{content:url(img/encuentro-logo-blanco.png);filter:none}}
 :root[data-theme="dark"] img[src$="encuentro-logo-negro.png"]{content:url(img/encuentro-logo-blanco.png);filter:none}
