@@ -337,13 +337,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
   .site-nav.open .nav-toggle span:nth-child(2){opacity:0;transform:scaleX(0)}
   .site-nav.open .nav-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
   .nav-panel{display:flex;flex-direction:column;justify-content:center;gap:2rem;position:fixed;inset:0;z-index:50;background:#111;color:#f4f4f1;padding:5rem 24px 2.5rem;
-    clip-path:circle(0% at calc(100% - 2.6rem) 2.6rem);visibility:hidden;
-    transition:clip-path .55s cubic-bezier(.7,0,.2,1),visibility 0s linear .55s}
-  .site-nav.open .nav-panel{clip-path:circle(150% at calc(100% - 2.6rem) 2.6rem);visibility:visible;transition:clip-path .65s cubic-bezier(.7,0,.2,1),visibility 0s}
-  .panel-logo{display:block;height:2.6rem;width:auto;align-self:flex-start;opacity:0;transform:translateY(-12px);transition:opacity .3s,transform .3s}
+    transform:translateX(100%);visibility:hidden;box-shadow:-24px 0 48px rgba(0,0,0,.25);
+    transition:transform .5s cubic-bezier(.7,0,.2,1),visibility 0s linear .5s}
+  .site-nav.open .nav-panel{transform:none;visibility:visible;transition:transform .55s cubic-bezier(.2,.8,.2,1),visibility 0s}
+  .panel-logo{display:block;height:2.6rem;width:auto;align-self:flex-start;opacity:0;transform:translateX(40px);transition:opacity .3s,transform .3s}
   .site-nav .nav-panel ul{flex-direction:column;gap:.2rem}
   .site-nav .nav-panel a{display:inline-block;font-family:var(--display);font-weight:900;font-size:clamp(2.6rem,13vw,3.8rem);line-height:1.05;letter-spacing:0;color:#f4f4f1;border-bottom:0;padding:0;
-    opacity:0;transform:translateY(28px);transition:opacity .25s,transform .25s}
+    opacity:0;transform:translateX(40px);transition:opacity .25s,transform .25s}
   .site-nav .nav-panel a[aria-current="page"]{color:var(--hi)}
   .panel-meta{display:block;margin:0;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#b5b5b0;opacity:0;transition:opacity .25s}
   .site-nav.open .panel-logo{opacity:1;transform:none;transition:opacity .45s .2s,transform .45s .2s}
