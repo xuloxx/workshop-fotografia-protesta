@@ -30,11 +30,16 @@
 <nav class="site-nav" aria-label="Secciones del sitio">
   <div class="wrap">
     <a class="nav-logo" href="index.html" aria-label="Encuentro Fotográfico, inicio"><img src="img/encuentro-logo-negro.png" alt="" width="1977" height="420"></a>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="quienes-somos.html">Quiénes somos</a></li>
-      <li><a href="contacto.html" aria-current="page">Contacto</a></li>
-    </ul>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <div class="nav-panel" id="nav-panel">
+      <img class="panel-logo" src="img/encuentro-logo-blanco.png" alt="Encuentro Fotográfico" width="1977" height="420">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+      <p class="panel-meta">Workshop gratuito · 25 y 28 nov 2026 · USACH</p>
+    </div>
   </div>
 </nav>
 
@@ -115,7 +120,6 @@
           <label>Mensaje<textarea name="mensaje" rows="6" required></textarea></label>
           <p class="cform-error" id="cform-error" role="alert" hidden></p>
           <button class="btn" type="submit">Enviar mensaje</button>
-          <p class="cform-alt" id="cform-alt"></p>
         </form>
       </div>
     </div>
@@ -145,7 +149,6 @@
   const to = ['domingofk', 'gmail.com'].join('@');
   const form = document.getElementById('form-contacto');
   const err = document.getElementById('cform-error');
-  document.getElementById('cform-alt').innerHTML = '¿No se abrió tu correo? Escribe directo a <a href="mailto:' + to + '">' + to + '</a>.';
   form.addEventListener('input', () => { err.hidden = true; });
   form.addEventListener('submit', e => {
     e.preventDefault();
@@ -162,5 +165,6 @@
   });
 })();
 </script>
+<script src="nav.js"></script>
 </body>
 </html>
