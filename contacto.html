@@ -54,9 +54,37 @@
 </header>
 
 <main>
+  <section class="frame" id="escribenos">
+    <div class="wrap">
+      <div class="frame-head"><h2>Escríbenos</h2><span class="frame-no">Cuadro 01 · Formulario</span></div>
+      <div class="contact">
+        <div class="prose">
+          <p>¿Tienes una consulta sobre el workshop, quieres colaborar o eres de un medio de prensa? Escríbenos y te responderemos a la brevedad.</p>
+          <p class="stream-note">Al enviar se abrirá tu aplicación de correo con el mensaje listo.</p>
+        </div>
+        <form id="form-contacto" class="cform" novalidate>
+          <label>Nombre<input name="nombre" type="text" autocomplete="name" required></label>
+          <label>Correo electrónico<input name="correo" type="email" autocomplete="email" required></label>
+          <label>Motivo
+            <select name="motivo">
+              <option>Consulta sobre el workshop</option>
+              <option>Inscripciones</option>
+              <option>Prensa</option>
+              <option>Quiero colaborar</option>
+              <option>Otro</option>
+            </select>
+          </label>
+          <label>Mensaje<textarea name="mensaje" rows="6" required></textarea></label>
+          <p class="cform-error" id="cform-error" role="alert" hidden></p>
+          <button class="btn" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <section class="frame" id="datos">
     <div class="wrap">
-      <div class="frame-head"><h2>Datos útiles</h2><span class="frame-no">Cuadro 01 · Información</span></div>
+      <div class="frame-head"><h2>Datos útiles</h2><span class="frame-no">Cuadro 02 · Información</span></div>
       <div class="cards">
         <article class="card">
           <span class="tag">Inscripciones</span>
@@ -88,7 +116,7 @@
 
   <section class="frame" id="preguntas">
     <div class="wrap">
-      <div class="frame-head"><h2>Preguntas frecuentes</h2><span class="frame-no">Cuadro 02 · Dudas</span></div>
+      <div class="frame-head"><h2>Preguntas frecuentes</h2><span class="frame-no">Cuadro 03 · Dudas</span></div>
       <div class="faq">
         <details><summary>¿El workshop tiene costo?</summary><p>No. Es una actividad gratuita, voluntaria y sin fines de lucro.</p></details>
         <details><summary>¿Necesito experiencia previa?</summary><p>No. El programa está pensado para quienes están empezando en la fotografía.</p></details>
@@ -96,33 +124,6 @@
         <details><summary>¿Tengo que inscribirme?</summary><p>Sí, si vas a asistir de forma presencial a la Sala de Cine Gladys Pinto Celedón. La inscripción se hace por PortalDisc. Para seguir el streaming no necesitas inscribirte.</p></details>
         <details><summary>¿Cómo llego a la sede?</summary><p>La sala está en la USACH, a pocos pasos de la estación Universidad de Santiago de la Línea 1 del Metro. En la página de inicio encontrarás el plano de acceso.</p></details>
         <details><summary>¿Quedará grabado?</summary><p>Sí. La grabación quedará disponible después en plataformas de libre acceso.</p></details>
-      </div>
-    </div>
-  </section>
-  <section class="frame" id="escribenos">
-    <div class="wrap">
-      <div class="frame-head"><h2>Escríbenos</h2><span class="frame-no">Cuadro 03 · Formulario</span></div>
-      <div class="contact">
-        <div class="prose">
-          <p>¿Tienes una consulta sobre el workshop, quieres colaborar o eres de un medio de prensa? Escríbenos y te responderemos a la brevedad.</p>
-          <p class="stream-note">Al enviar se abrirá tu aplicación de correo con el mensaje listo.</p>
-        </div>
-        <form id="form-contacto" class="cform" novalidate>
-          <label>Nombre<input name="nombre" type="text" autocomplete="name" required></label>
-          <label>Correo electrónico<input name="correo" type="email" autocomplete="email" required></label>
-          <label>Motivo
-            <select name="motivo">
-              <option>Consulta sobre el workshop</option>
-              <option>Inscripciones</option>
-              <option>Prensa</option>
-              <option>Quiero colaborar</option>
-              <option>Otro</option>
-            </select>
-          </label>
-          <label>Mensaje<textarea name="mensaje" rows="6" required></textarea></label>
-          <p class="cform-error" id="cform-error" role="alert" hidden></p>
-          <button class="btn" type="submit">Enviar mensaje</button>
-        </form>
       </div>
     </div>
   </section>
