@@ -397,3 +397,6 @@ a{text-decoration-color:#9a9a96}
 /* Modo oscuro: logo blanco en vez de invertir (el punto amarillo se volvía azul) */
 @media (prefers-color-scheme: dark){:root[data-theme="auto"] img[src$="encuentro-logo-negro.png"]{content:url(img/encuentro-logo-blanco.png);filter:none}}
 :root[data-theme="dark"] img[src$="encuentro-logo-negro.png"]{content:url(img/encuentro-logo-blanco.png);filter:none}
+
+/* Descripciones de expositores un poco más grandes */
+.speaker p:not(.role),.guest-body p:not(.role){font-size:1.12rem;line-height:1.55}
