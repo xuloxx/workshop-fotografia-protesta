@@ -60,8 +60,7 @@
       <div class="contact">
         <div class="prose">
           <p>¿Tienes una consulta sobre el workshop, quieres colaborar o eres de un medio de prensa? Escríbenos y te responderemos a la brevedad.</p>
-          <p class="stream-note">Al enviar se abrirá tu aplicación de correo con el mensaje listo.</p>
-        </div>
+                  </div>
         <form id="form-contacto" class="cform" novalidate>
           <label>Nombre<input name="nombre" type="text" autocomplete="name" required></label>
           <label>Correo electrónico<input name="correo" type="email" autocomplete="email" required></label>
@@ -75,8 +74,10 @@
             </select>
           </label>
           <label>Mensaje<textarea name="mensaje" rows="6" required></textarea></label>
+          <input type="checkbox" name="botcheck" class="cform-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
           <p class="cform-error" id="cform-error" role="alert" hidden></p>
           <button class="btn" type="submit">Enviar mensaje</button>
+          <p class="cform-ok" id="cform-ok" role="status" hidden></p>
         </form>
       </div>
     </div>
@@ -148,12 +149,16 @@
 </footer>
 <script>
 (function(){
-  // El correo se arma aquí para que no quede escrito tal cual en la página
+  // Envío directo con Web3Forms; la clave es pública por diseño
+  const KEY = '91d9ee1f-60c8-4346-acc4-fd7d74a5158f';
+  // Respaldo si el servicio falla: el correo se arma aquí para que no quede escrito tal cual
   const to = ['encuentrofotografico.cl', 'gmail.com'].join('@');
   const form = document.getElementById('form-contacto');
   const err = document.getElementById('cform-error');
-  form.addEventListener('input', () => { err.hidden = true; });
-  form.addEventListener('submit', e => {
+  const ok = document.getElementById('cform-ok');
+  const btn = form.querySelector('button[type="submit"]');
+  form.addEventListener('input', () => { err.hidden = true; ok.hidden = true; });
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const f = form.elements;
     const nombre = f.nombre.value.trim(), correo = f.correo.value.trim(), mensaje = f.mensaje.value.trim();
@@ -162,9 +167,29 @@
     else if (!correo || !f.correo.checkValidity()) msg = 'Escribe un correo electrónico válido.';
     else if (!mensaje) msg = 'Escribe tu mensaje.';
     if (msg) { err.textContent = msg; err.hidden = false; return; }
+    if (f.botcheck.checked) return;
     const subject = 'Encuentro Fotográfico · ' + f.motivo.value + ' · ' + nombre;
-    const body = mensaje + '\n\n— ' + nombre + ' (' + correo + ')';
-    location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    try {
+      const r = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: KEY, subject, from_name: 'Web Encuentro Fotográfico',
+          nombre, email: correo, motivo: f.motivo.value, mensaje
+        })
+      });
+      const data = await r.json();
+      if (!r.ok || !data.success) throw new Error(data.message || 'error');
+      form.reset();
+      ok.textContent = '¡Gracias, ' + nombre + '! Recibimos tu mensaje y te responderemos a la brevedad.';
+      ok.hidden = false;
+    } catch (_) {
+      err.innerHTML = 'No pudimos enviar el mensaje. Inténtalo de nuevo o escríbenos a <a href="mailto:' + to + '?subject=' + encodeURIComponent(subject) + '">' + to + '</a>.';
+      err.hidden = false;
+    } finally {
+      btn.disabled = false; btn.textContent = 'Enviar mensaje';
+    }
   });
 })();
 </script>
