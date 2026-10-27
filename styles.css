@@ -402,3 +402,6 @@ a{text-decoration-color:#9a9a96}
 .cform-ok{margin:0;padding:.75rem .9rem;background:var(--hi);color:var(--hi-ink);font-weight:600}
 .cform-trap{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .cform .btn:disabled{opacity:.6;cursor:progress}
+
+/* Breve bio de Javier García en la ficha del ODC */
+.guest-person p{margin:.45rem 0 0;font-size:.95rem;line-height:1.5;max-width:52ch}
