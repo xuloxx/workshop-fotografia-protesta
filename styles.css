@@ -370,7 +370,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 .caption-box textarea{font:inherit;font-size:.95rem;line-height:1.5;color:var(--ink);background:var(--paper-2);border:1.5px solid var(--ink);padding:.9rem 1rem;width:100%;resize:vertical;border-radius:0}
 .copy-msg{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--ink-2);align-self:center}
 .gallery{display:grid;gap:1.25rem}
-.g-afiche{grid-template-columns:repeat(auto-fill,minmax(14rem,1fr))}
 .g-feed{grid-template-columns:repeat(auto-fill,minmax(12rem,1fr))}
 .g-story{grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr))}
 .piece-card{margin:0;display:flex;flex-direction:column;gap:.55rem;min-width:0}
@@ -381,7 +380,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-bet
 .piece-card span{display:block;font-size:.82rem;color:var(--ink-2)}
 .piece-dl{align-self:flex-start;padding:.45rem .8rem;font-size:.85rem}
 .zip-row{margin:1.75rem 0 0}
-@media (max-width:560px){.g-afiche,.g-feed,.g-story{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.g-feed,.g-story{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* Intermedio: blanco y negro con acentos en amarillo.
    El amarillo queda solo en: "protestas" del título, botones principales, página actual del menú,
