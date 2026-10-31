@@ -239,6 +239,9 @@ section.frame{padding-block:clamp(2.5rem,6vw,4rem);border-top:1.5px solid var(--
 
 footer{border-top:1.5px solid var(--ink);padding-block:2rem 3rem;font-size:.9rem;color:var(--ink-2)}
 .credit{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;flex-basis:100%;opacity:.8}
+footer .foot-ig{display:inline-flex;align-items:center;gap:.45rem;color:var(--ink);font-weight:600;text-decoration:none}
+footer .foot-ig:hover{text-decoration:underline}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between}
 
 @media (max-width:860px){
